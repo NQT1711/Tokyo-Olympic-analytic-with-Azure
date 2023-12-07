@@ -82,17 +82,42 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "Coaches",
 						"type": "DatasetReference"
 					}
+				],
+				"outputs": [
+					{
+						"referenceName": "CoachesSink",
+						"type": "DatasetReference"
+					}
 				]
 			},
 			{
-				"name": "Copy data3",
+				"name": "EntriesGender",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -104,11 +129,52 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"enableStaging": false
-				}
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "EntriesGender",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "EntriesGenderSink",
+						"type": "DatasetReference"
+					}
+				]
 			},
 			{
-				"name": "Copy data4",
+				"name": "Medals",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -120,8 +186,49 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"enableStaging": false
-				}
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Medals",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "MedalsSink",
+						"type": "DatasetReference"
+					}
+				]
 			},
 			{
 				"name": "Copy data5",
