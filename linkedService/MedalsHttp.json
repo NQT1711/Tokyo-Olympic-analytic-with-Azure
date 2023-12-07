@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://github.com/NQT1711/Tokyo-Olympic-analytic-with-Azure/blob/main/Data/Medals.csv",
+			"url": "https://raw.githubusercontent.com/NQT1711/Tokyo-Olympic-analytic-with-Azure/main/Data/Medals.csv",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
