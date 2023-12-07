@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "tokyo-olympic-nqt-data-factory"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AthletesHttp_properties_typeProperties_url": {
+			"value": "https://github.com/NQT1711/Tokyo-Olympic-analytic-with-Azure/blob/main/Data/Athletes.csv"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://tokyoolympicnqtproject.dfs.core.windows.net/"
+		},
+		"CoachesHttp_properties_typeProperties_url": {
+			"value": "https://github.com/NQT1711/Tokyo-Olympic-analytic-with-Azure/blob/main/Data/Coaches.csv"
+		},
+		"EntriesGenderHttp_properties_typeProperties_url": {
+			"value": "https://github.com/NQT1711/Tokyo-Olympic-analytic-with-Azure/blob/main/Data/EntriesGender.csv"
+		},
+		"MedalsHttp_properties_typeProperties_url": {
+			"value": "https://github.com/NQT1711/Tokyo-Olympic-analytic-with-Azure/blob/main/Data/Medals.csv"
+		},
+		"TeamsHttp_properties_typeProperties_url": {
+			"value": "https://github.com/NQT1711/Tokyo-Olympic-analytic-with-Azure/blob/main/Data/Teams.csv"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
